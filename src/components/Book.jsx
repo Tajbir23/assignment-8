@@ -10,7 +10,7 @@ const Book = ({ book }) => {
       <div>
         <div className="mt-5">
             {book.tags.map((tag, index) => (
-              <span key={index} className="inline-block text-[#23BE0A] bg-[#23BE0A0D] text-white text-sm px-2 py-1 rounded-full mr-2 mb-2 font-medium">{tag}</span>
+              <span key={index} className="inline-block text-[#23BE0A] bg-[#23BE0A0D] text-sm px-2 py-1 rounded-full mr-2 mb-2 font-medium">{tag}</span>
             ))}
         </div>
         <div className="flex flex-col gap-2">
