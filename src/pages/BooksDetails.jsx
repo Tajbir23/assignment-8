@@ -9,6 +9,8 @@ const BooksDetails = () => {
   const { id } = useParams();
   const book = useFetch();
 
+  console.log(dataArray)
+
   useEffect(() => {
     if (book) {
       const data = book.filter((item) => item.bookId === parseInt(id));
@@ -16,28 +18,48 @@ const BooksDetails = () => {
     }
   }, [book, id]);
 
+  const error = () => {
+    toast.error('book read already added', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        });
+  }
+
+  const success = (text) => {
+    toast.success(`book ${text} added successfully`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        });
+  }
+
   const readBook = () => {
     const datas = localStorage.getItem('readBook')
       if (datas) {
         const data = JSON.parse(datas);
         if (data.find((item) => item.bookId === parseInt(id))) {
-            toast.error('book read already added', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-                transition: Bounce,
-                });
+            error();
         } else {
           data.push(dataArray);
           localStorage.setItem('readBook', JSON.stringify(data));
+          success('read');
         }
       } else {
         localStorage.setItem('readBook', JSON.stringify([dataArray]));
+        success('read');
       }
     
   }
@@ -50,37 +72,19 @@ const BooksDetails = () => {
     const wishlistData = JSON.parse(datas);
 
         if (data?.find((item) => item.bookId === parseInt(id))) {
-            toast.error('book read already added', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-                transition: Bounce,
-                });
+            error();
         } else {
           if(datas){
             if(wishlistData.find((item) => item.bookId === parseInt(id))){
-                toast.error('book wishlist already added', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    transition: Bounce,
-                    });
+                error();
             } else{
               wishlistData.push(dataArray);
               localStorage.setItem('wishlist', JSON.stringify(wishlistData));
+              success('wishlist');
             }
           }else{
             localStorage.setItem('wishlist', JSON.stringify([dataArray]));
+            success('wishlist');
           }
         }
 
