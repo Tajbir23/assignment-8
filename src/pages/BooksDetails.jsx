@@ -18,8 +18,8 @@ const BooksDetails = () => {
     }
   }, [book, id]);
 
-  const error = () => {
-    toast.error('book read already added', {
+  const error = (text) => {
+    toast.error(`book ${text} already added`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -51,7 +51,7 @@ const BooksDetails = () => {
       if (datas) {
         const data = JSON.parse(datas);
         if (data.find((item) => item.bookId === parseInt(id))) {
-            error();
+            error('read');
         } else {
           data.push(dataArray);
           localStorage.setItem('readBook', JSON.stringify(data));
@@ -72,11 +72,11 @@ const BooksDetails = () => {
     const wishlistData = JSON.parse(datas);
 
         if (data?.find((item) => item.bookId === parseInt(id))) {
-            error();
+            error('read');
         } else {
           if(datas){
             if(wishlistData.find((item) => item.bookId === parseInt(id))){
-                error();
+                error('wishlist');
             } else{
               wishlistData.push(dataArray);
               localStorage.setItem('wishlist', JSON.stringify(wishlistData));
