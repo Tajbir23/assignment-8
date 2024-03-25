@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import useFetch from "../components/useFetch";
 import { useParams } from "react-router-dom";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const BooksDetails = () => {
   const [dataArray, setDataArray] = useState();
@@ -15,10 +17,91 @@ const BooksDetails = () => {
   }, [book, id]);
 
   const readBook = () => {
+    const datas = localStorage.getItem('readBook')
+      if (datas) {
+        const data = JSON.parse(datas);
+        if (data.find((item) => item.bookId === parseInt(id))) {
+            toast.error('book read already added', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                });
+        } else {
+          data.push(dataArray);
+          localStorage.setItem('readBook', JSON.stringify(data));
+        }
+      } else {
+        localStorage.setItem('readBook', JSON.stringify([dataArray]));
+      }
     
   }
 
+  const wishlistBook = () => {
+    const datas = localStorage.getItem('wishlist');
+    const readBookData = localStorage.getItem('readBook');
+      
+    const data = JSON.parse(readBookData);
+    const wishlistData = JSON.parse(datas);
+
+        if (data?.find((item) => item.bookId === parseInt(id))) {
+            toast.error('book read already added', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                });
+        } else {
+          if(datas){
+            if(wishlistData.find((item) => item.bookId === parseInt(id))){
+                toast.error('book wishlist already added', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    });
+            } else{
+              wishlistData.push(dataArray);
+              localStorage.setItem('wishlist', JSON.stringify(wishlistData));
+            }
+          }else{
+            localStorage.setItem('wishlist', JSON.stringify([dataArray]));
+          }
+        }
+
+        
+  }
+
   return (
+    <>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+transition= {Bounce}
+/>
     <div className="my-10 mx-6 flex sm:flex-row flex-col gap-8">
       <div className="sm:w-1/5 flex items-center justify-center p-10 bg-[#F3F3F3] rounded-xl">
       <img src={dataArray?.image}  alt={dataArray?.bookName} />
@@ -67,11 +150,13 @@ const BooksDetails = () => {
          </tbody>
         </table>
         <div className="mt-5 flex gap-2">
-            <button onClick={() => } className="btn bg-[#50B1C9] hover:bg-transparent">Read</button>
-            <button className="btn bg-[#50B1C9] hover:bg-transparent">Wishlist</button>
+            <button onClick={() => readBook()} className="btn bg-[#50B1C9] hover:bg-transparent">Read</button>
+            <button onClick={() => wishlistBook()} className="btn bg-[#50B1C9] hover:bg-transparent">Wishlist</button>
         </div>
       </div>
+      
     </div>
+    </>
   );
 };
 
