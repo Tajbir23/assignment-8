@@ -8,7 +8,7 @@ const Chart = () => {
         const data = localStorage.getItem('readBook')
         const readBookData = JSON.parse(data);
         
-        const newData = readBookData.map(value => ({
+        const newData = readBookData?.map(value => ({
             name: value?.bookName,
             uv: value?.totalPages,
             pv: value?.rating,
@@ -35,7 +35,7 @@ const Chart = () => {
       const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
   return (
     <div className="overflow-auto">
-        <BarChart width={1500} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+        {books ? <BarChart width={1500} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -44,7 +44,7 @@ const Chart = () => {
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
         ))}
             </Bar>
-        </BarChart>
+        </BarChart> : <div className="text-5xl font-bold flex items-center justify-center h-[calc(100vh-80px)]"><h1>data is not available</h1></div>}
     </div>
   )
 }

@@ -14,16 +14,16 @@ const WishlistBook = ({sortId}) => {
     const bookArray = JSON.parse(book);
     if (sortId) {
       if (sortId === "page") {
-        const sorted = bookArray.sort((a, b) => a.totalPages - b.totalPages);
+        const sorted = bookArray?.sort((a, b) => a?.totalPages - b?.totalPages);
         setData(sorted);
       }
       if (sortId === "rating") {
-        const sorted = bookArray.sort((a, b) => a.rating - b.rating);
+        const sorted = bookArray?.sort((a, b) => a?.rating - b?.rating);
         setData(sorted);
       }
       if (sortId === "year") {
-        const sorted = bookArray.sort(
-          (a, b) => a.yearOfPublishing - b.yearOfPublishing
+        const sorted = bookArray?.sort(
+          (a, b) => a?.yearOfPublishing - b?.yearOfPublishing
         );
         setData(sorted);
       }
