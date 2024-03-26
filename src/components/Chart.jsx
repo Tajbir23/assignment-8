@@ -18,7 +18,6 @@ const Chart = () => {
         setBooks(newData);
     },[])
 
-    console.log(books);
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -35,8 +34,8 @@ const Chart = () => {
 
       const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
   return (
-    <div>
-        <BarChart width={1000} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+    <div className="overflow-scroll">
+        <BarChart width={1500} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

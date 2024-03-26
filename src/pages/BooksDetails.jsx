@@ -9,7 +9,6 @@ const BooksDetails = () => {
   const { id } = useParams();
   const book = useFetch();
 
-//   console.log(dataArray)
 
   useEffect(() => {
     if (book) {
