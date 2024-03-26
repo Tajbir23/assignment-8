@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Book = ({ book }) => {
   console.log(book);
   return (
-    <NavLink to={`/bookdetails/${book.bookId}`} className="p-3 border rounded-xl">
+    <NavLink to={`/bookdetails/${book.bookId}`} className="p-5 border rounded-xl hover:shadow-2xl duration-500 ease-in-out">
       <div className="bg-[#F3F3F3] rounded-xl flex items-center justify-center py-10">
         <img src={book.image} className="w-28 h-52" alt={book.bookName} />
       </div>

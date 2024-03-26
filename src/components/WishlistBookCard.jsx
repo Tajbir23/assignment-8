@@ -1,8 +1,9 @@
+import PropTypes from "prop-types"
 import { CiLocationOn } from "react-icons/ci";
-import PropTypes from "prop-types";
-import { MdOutlineGroup, MdOutlineFindInPage } from "react-icons/md";
+import { MdOutlineFindInPage, MdOutlineGroup } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-const ReadBookCard = ({items}) => {
+
+const WishlistBookCard = ({items}) => {
   return (
     <div className="flex sm:flex-row flex-col p-5 gap-5 border rounded-xl">
         <div className="bg-[#1313130D] flex items-center justify-center p-5 rounded-xl">
@@ -50,7 +51,7 @@ const ReadBookCard = ({items}) => {
   )
 }
 
-ReadBookCard.propTypes = {
+WishlistBookCard.propTypes = {
     items: PropTypes.shape({
       bookName: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
@@ -64,5 +65,4 @@ ReadBookCard.propTypes = {
       rating: PropTypes.number.isRequired
     }),
   };
-
-export default ReadBookCard
+export default WishlistBookCard

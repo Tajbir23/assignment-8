@@ -4,6 +4,7 @@ import WishlistBook from "../components/WishlistBook";
 
 const listedBooks = () => {
   const [sortId, setSortId] = useState("");
+  const [tab, setTab] = useState('read')
   console.log(sortId);
   return (
     <div className="mx-6">
@@ -21,12 +22,12 @@ const listedBooks = () => {
 
 
       <div role="tablist" className="tabs tabs-lifted">
-        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read books" checked />
+        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read" checked={tab === 'read'} onChange={() => setTab('read')} />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
             <ReadBook sortId={sortId} />
         </div>
 
-        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist books"  />
+        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist" checked={tab === 'wishlist' } onChange={() => setTab('wishlist')} />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
             <WishlistBook sortId={sortId} />
         </div>
