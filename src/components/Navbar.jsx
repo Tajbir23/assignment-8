@@ -35,6 +35,9 @@ const Navbar = () => {
               <li>
                 <NavLink to='/pagetoread' className='btn bg-transparent'>Pages to Read</NavLink>
               </li>
+              <li>
+                <NavLink to='/about' className='btn bg-transparent'>About us</NavLink>
+              </li>
             </ul>
           </div>
           <Link to='/' className="btn btn-ghost text-xl font-bold border-none bg-transparent">Book Vibe</Link>
@@ -49,6 +52,9 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to='/pagetoread' className='btn bg-transparent'>Pages to Read</NavLink>
+            </li>
+            <li>
+                <NavLink to='/about' className='btn bg-transparent'>About us</NavLink>
             </li>
           </ul>
         </div>
