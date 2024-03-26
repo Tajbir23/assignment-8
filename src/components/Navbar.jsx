@@ -38,6 +38,9 @@ const Navbar = () => {
               <li>
                 <NavLink to='/about' className='btn bg-transparent'>About us</NavLink>
               </li>
+              <li>
+                <NavLink to='/contact' className='btn bg-transparent'> Contact</NavLink>
+            </li>
             </ul>
           </div>
           <Link to='/' className="btn btn-ghost text-xl font-bold border-none bg-transparent">Book Vibe</Link>
@@ -55,6 +58,9 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink to='/about' className='btn bg-transparent'>About us</NavLink>
+            </li>
+            <li>
+                <NavLink to='/contact' className='btn bg-transparent'> Contact</NavLink>
             </li>
           </ul>
         </div>
