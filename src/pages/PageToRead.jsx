@@ -1,8 +1,11 @@
+import Chart from "../components/Chart"
 
 
 const PageToRead = () => {
   return (
-    <div>PageToRead</div>
+    <div>
+      <Chart />
+    </div>
   )
 }
 

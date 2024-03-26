@@ -1,7 +1,8 @@
 import { CiStar } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 const Book = ({ book }) => {
-  console.log(book);
+  
   return (
     <NavLink to={`/bookdetails/${book.bookId}`} className="p-5 border rounded-xl hover:shadow-2xl duration-500 ease-in-out">
       <div className="bg-[#F3F3F3] rounded-xl flex items-center justify-center py-10">
@@ -30,6 +31,18 @@ const Book = ({ book }) => {
       </div>
     </NavLink>
   );
+};
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    bookId: PropTypes.number.isRequired,
+    bookName: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    category: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+  }),
 };
 
 export default Book;

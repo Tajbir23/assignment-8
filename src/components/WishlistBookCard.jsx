@@ -44,7 +44,7 @@ const WishlistBookCard = ({items}) => {
             <div className="flex sm:flex-row flex-col gap-5">
                 <span className="px-3 py-1 rounded-xl bg-[#328EFF26] text-[#328EFF]">Category : {items.category}</span>
                 <span className="px-3 py-1 rounded-xl bg-[#FFAC3326] text-[#FFAC33]">Rating : {items.rating}</span>
-                <NavLink to={`/bookdetails/${items.bookId}`} className="px-3 py-1 rounded-xl bg-[#23BE0A] text-white font-medium">View details</NavLink>
+                <NavLink to={`/bookdetails/${items.bookId}`} className="px-3 py-1 rounded-xl bg-[#23BE0A] hover:bg-white hover:text-black text-white font-medium">View details</NavLink>
             </div>
         </div>
     </div>
