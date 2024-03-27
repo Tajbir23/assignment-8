@@ -48,25 +48,25 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-5">
             <li>
-              <NavLink to='/' className='btn bg-transparent'>Home</NavLink>
+              <NavLink to='/' className='btn border-none shadow-none bg-transparent'>Home</NavLink>
             </li>
             <li>
-                <NavLink to='/listedbooks' className='btn bg-transparent'>Listed Books</NavLink>
+                <NavLink to='/listedbooks' className='btn border-none shadow-none bg-transparent'>Listed Books</NavLink>
             </li>
             <li>
-              <NavLink to='/pagetoread' className='btn bg-transparent'>Pages to Read</NavLink>
+              <NavLink to='/pagetoread' className='btn border-none shadow-none bg-transparent'>Pages to Read</NavLink>
             </li>
             <li>
-                <NavLink to='/about' className='btn bg-transparent'>About us</NavLink>
+                <NavLink to='/about' className='btn border-none shadow-none bg-transparent'>About us</NavLink>
             </li>
             <li>
-                <NavLink to='/contact' className='btn bg-transparent'> Contact</NavLink>
+                <NavLink to='/contact' className='btn border-none shadow-none bg-transparent'> Contact</NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end gap-5">
-          <a className="btn bg-[#23BE0A] hover:bg-transparent">Sign In</a>
-          <a className="btn bg-[#59C6D2] hover:bg-transparent">Sign Up</a>
+          <a className="btn bg-[#23BE0A] hover:bg-transparent text-white hover:text-black">Sign In</a>
+          <a className="btn bg-[#59C6D2] hover:bg-transparent text-white hover:text-black">Sign Up</a>
         </div>
       </div>
   )

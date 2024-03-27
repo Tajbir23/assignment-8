@@ -2,55 +2,81 @@
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 h-screen py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Contact Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">Send us a message</h3>
-            <form>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700">Name</label>
-                <input type="text" id="name" name="name" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700">Email</label>
-                <input type="email" id="email" name="email" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-400" />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-gray-700">Message</label>
-                <textarea id="message" name="message" rows="4" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-400"></textarea>
-              </div>
-              <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Send Message</button>
-            </form>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">Contact Information</h3>
-            <div className="flex items-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 2a8 8 0 00-8 8c0 4.418 3.582 8 8 8s8-3.582 8-8a8 8 0 00-8-8zm0 14a6 6 0 110-12 6 6 0 010 12z" clipRule="evenodd" />
-                <path d="M10 8a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
-              <span className="text-gray-700">123 Main Street, Cityville, ABC 12345</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 2a8 8 0 00-8 8c0 4.418 3.582 8 8 8s8-3.582 8-8a8 8 0 00-8-8zm0 14a6 6 0 110-12 6 6 0 010 12z" clipRule="evenodd" />
-                <path d="M10 8a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
-              <span className="text-gray-700">+123 456 7890</span>
-            </div>
-            <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 2a8 8 0 00-8 8c0 4.418 3.582 8 8 8s8-3.582 8-8a8 8 0 00-8-8zm0 14a6 6 0 110-12 6 6 0 010 12z" clipRule="evenodd" />
-                <path d="M10 8a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
-              <span className="text-gray-700">info@example.com</span>
-            </div>
-          </div>
-        </div>
+
+<div className="flex items-center justify-center p-12">
+
+  <div className="mx-auto w-full max-w-[550px]">
+    <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <div className="mb-5">
+        <label
+          for="name"
+          className="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          Full Name
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Full Name"
+          className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
       </div>
-    </section>
+      <div className="mb-5">
+        <label
+          for="email"
+          className="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          Email Address
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="example@domain.com"
+          className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="subject"
+          className="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          Subject
+        </label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Enter your subject"
+          className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+      </div>
+      <div className="mb-5">
+        <label
+          for="message"
+          className="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          Message
+        </label>
+        <textarea
+          rows="4"
+          name="message"
+          id="message"
+          placeholder="Type your message"
+          className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        ></textarea>
+      </div>
+      <div>
+        <button
+          className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
   );
 };
 

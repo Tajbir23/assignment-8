@@ -2,4 +2,6 @@ li .active {
   border: 1px solid rgb(35, 190, 10);
   border-radius: 8px;
   color: #23BE0A;
+  box-shadow: 1px 4px 5px 0px #23BE0A;
+  transition-duration: 500ms;
 }

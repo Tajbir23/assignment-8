@@ -1,14 +1,12 @@
 // AboutUsSection.js
 
-import React from 'react';
-
 const AboutUsSection = () => {
     return (
         <section className="bg-gray-100 py-12">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row">
                     <div className="lg:w-1/2">
-                        <img src="https://static.toiimg.com/photo/105046079.cms" alt="Team" className="w-full rounded-lg shadow-lg" />
+                        <img src="https://static.toiimg.com/photo/105046079.cms" alt="Team" className="w-full sm:h-max rounded-lg shadow-lg" />
                     </div>
                     <div className="lg:w-1/2 lg:pl-12 mt-6 lg:mt-0">
                         <h2 className="text-4xl lg:text-5xl font-semibold text-gray-800 mb-6">Welcome to Our World</h2>
