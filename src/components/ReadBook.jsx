@@ -10,7 +10,7 @@ const ReadBook = ({ sortId }) => {
     const book = localStorage.getItem("readBook");
     const bookArray = JSON.parse(book);
     if (sortId) {
-        const sorted = bookArray?.sort((a, b) => a[sortId] - b[sortId]);
+        const sorted = bookArray?.sort((a, b) => b[sortId] - a[sortId]);
         setData(sorted);
     } else {
       setData(bookArray);
