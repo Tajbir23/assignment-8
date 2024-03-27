@@ -1,6 +1,6 @@
 # My Awesome Website
 
-Welcome to [My Awesome Website](https://assingment8.tajbirideas.com)!
+Welcome to [My Awesome Website](https://assignment8.tajbirideas.com)!
 
 ## Features and Characteristics
 
