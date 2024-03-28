@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid,  } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
 
 const Chart = () => {
     const [books, setBooks] = useState([]);
@@ -39,6 +39,7 @@ const Chart = () => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
+            <Tooltip />
             <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }} >
             {books?.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
