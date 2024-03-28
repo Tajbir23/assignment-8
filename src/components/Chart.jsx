@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,  } from 'recharts';
 
 const Chart = () => {
     const [books, setBooks] = useState([]);
@@ -35,7 +35,8 @@ const Chart = () => {
       const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
   return (
     <div className="overflow-auto flex items-center justify-center h-[calc(100vh-80px)]">
-        {books ? <BarChart width={1500} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+        {books ? <ResponsiveContainer width={700} height="100%">
+            <BarChart width={1500} height={500} data={books} margin={{top: 20, right: 30, left: 20, bottom: 5}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -45,7 +46,8 @@ const Chart = () => {
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
         ))}
             </Bar>
-        </BarChart> : <div className="text-5xl font-bold flex items-center justify-center h-[calc(100vh-80px)]"><h1>data is not available</h1></div>}
+        </BarChart>
+        </ResponsiveContainer> : <div className="text-5xl font-bold flex items-center justify-center h-[calc(100vh-80px)]"><h1>data is not available</h1></div>}
     </div>
   )
 }

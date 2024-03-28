@@ -4,7 +4,7 @@ import Hero from "../components/Hero"
 
 const Home = () => {
   return (
-    <div className=" my-8">
+    <div className="my-10">
         <Hero />
         <Books />
     </div>

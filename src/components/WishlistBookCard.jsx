@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const WishlistBookCard = ({items}) => {
   return (
-    <div className="flex sm:flex-row flex-col p-5 gap-5 border rounded-xl">
+    <div className="flex sm:flex-row flex-col p-5 gap-5 border rounded-xl hover:bg-gray-100 hover:shadow-2xl duration-500 cursor-pointer">
         <div className="bg-[#1313130D] flex items-center justify-center p-5 rounded-xl">
             <img className="h-full w-32" src={items.image} alt="book" />
         </div>

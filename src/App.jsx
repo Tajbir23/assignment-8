@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="mx-10">
+    <div className="sm:mx-10 mx-2">
       <Navbar />
       <Outlet />
     </div>
